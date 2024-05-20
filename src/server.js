@@ -1,6 +1,6 @@
 
-const express = require('express');
 const mongoose = require('mongoose');
+const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const app = express();
@@ -26,6 +26,8 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', UserSchema);
+
+
 
 // JWT Secret
 const JWT_SECRET = 'your_jwt_secret_key';
