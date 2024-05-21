@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const Movie = require('../models/Movies');
+const Movie = require('../models/MoviesSchema');
 const verifyToken = require('../middleware/Verify_token');
 require('dotenv').config();
 

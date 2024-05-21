@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const Tv_series = require('../models/Tv_series');
+const Tv_series = require('../models/Tv_seriesSchema');
 const verifyToken = require('../middleware/Verify_token');
 require('dotenv').config();
 
