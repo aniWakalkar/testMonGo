@@ -20,7 +20,8 @@ router.post('/admin/set/movies', verifyToken, async (req, res) => {
         };
         const response = await axios.request(options);
         const moviesData = response.data.data.opening;
-  
+        // console.log(moviesData, "+++++++++++++++++")
+        console.log("Data fetched successfully")
         // Create an array of promises for saving each movie
         const savePromises = moviesData.map(movieData => {
         const movie = new Movie({

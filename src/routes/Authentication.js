@@ -6,10 +6,6 @@ const User = require('../models/Users');
 require('dotenv').config();
 
 
-// testing
-router.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
 
 // Signup route
 router.post('/signup', async (req, res) => {
