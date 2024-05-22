@@ -49,7 +49,7 @@ router.post('/admin/set/movies', verifyToken, async (req, res) => {
 });
 
 // GET route to fetch MOVIE data FROM DATABASE
-router.get('/get/movies', verifyToken, async (req, res) => {
+router.get('/get/all/movies', verifyToken, async (req, res) => {
     try {
         const savedMovies = await Movie.find();
   
@@ -64,26 +64,46 @@ router.get('/get/movies', verifyToken, async (req, res) => {
     }
 });
 
-// GET route to fetch MOVIE DETAILS data FROM DATABASE
-router.get('/get/movie/details', verifyToken, async (req, res) => {
-try {
-    const {search_query} = req.body;
-    if (!search_query) {
-        return res.status(400).send({ message: 'Please provide a movie name' });
-    }
-    const savedMovie = await Movie.find({ name: new RegExp(search_query, 'i') }).limit(14);
+// GET route to fetch MOVIE data FROM DATABASE
+router.get('/get/movie', verifyToken, async (req, res) => {
+    try {
+        const {search_query} = req.body;
+        if (!search_query) {
+            return res.status(400).send({ message: 'Please provide a movie name' });
+        }
+        const savedMovie = await Movie.find({ name: new RegExp(search_query, 'i') }).limit(14);
 
-    if (!savedMovie) {
-        return res.status(404).send({ message: 'Movie not found' });
-    }
+        if (savedMovie.length === 0) {
+            const options = {
+                method: 'GET',
+                url: process.env.SEARCH_URL,
+                params: {
+                  country: 'in',
+                  title: search_query,
+                  output_language: 'en'
+                },
+                headers: {
+                  'X-RapidAPI-Key': process.env.SEARCH_X_RAPID_KEY,
+                  'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+                }
+            };
+            const response = await axios.request(options);
+            let result = response.data
 
-    res.status(200).json(savedMovie);
-} catch (error) {
-    console.error('Error fetching data:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-}
+            if (result.length === 0){
+                return res.status(404).send({ message: 'Movie not found' });
+            }else{
+                return res.status(200).json(result);
+            }
+        }else{
+            return res.status(200).json(savedMovie);
+        }
+        
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
-
 
 
 module.exports = router

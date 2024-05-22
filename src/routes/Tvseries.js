@@ -51,7 +51,7 @@ router.post('/admin/set/tvseries', verifyToken, async (req, res) => {
 });
 
 // GET route to fetch TV_SERIES data FROM DATABASE
-router.get('/get/tvseries', verifyToken, async (req, res) => {
+router.get('/get/all/tvseries', verifyToken, async (req, res) => {
     try {
         const savedTv_series = await Tv_series.find();
   
@@ -66,25 +66,47 @@ router.get('/get/tvseries', verifyToken, async (req, res) => {
     }
 });
   
-// GET route to fetch TV_SERIES DETAILS data FROM DATABASE
-router.get('/get/tvseries/details', verifyToken, async (req, res) => {
-try {
-    const {search_query} = req.body;
-    if (!search_query) {
-        return res.status(400).send({ message: 'Please provide a movie name' });
-    }
-    const savedTv_series = await Tv_series.find({ title: new RegExp(search_query, 'i') }).limit(14);
+// GET route to fetch TV_SERIES data FROM DATABASE
+router.get('/get/tvseries', verifyToken, async (req, res) => {
+    try {
+        const {search_query} = req.body;
+        if (!search_query) {
+            return res.status(400).send({ message: 'Please provide a movie name' });
+        }
+        const savedTv_series = await Tv_series.find({ title: new RegExp(search_query, 'i') }).limit(14);
 
-    if (!savedTv_series) {
-        return res.status(404).send({ message: 'Tv_series not found' });
-    }
+        if (savedTv_series.length === 0) {
+            const options = {
+                method: 'GET',
+                url: process.env.SEARCH_URL,
+                params: {
+                  country: 'in',
+                  title: search_query,
+                  output_language: 'en'
+                },
+                headers: {
+                  'X-RapidAPI-Key': process.env.SEARCH_X_RAPID_KEY,
+                  'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+                }
+            };
+            const response = await axios.request(options);
+            let result = response.data
 
-    res.status(200).json(savedTv_series);
-} catch (error) {
-    console.error('Error fetching data:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-}
+            if (result.length === 0){
+                return res.status(404).send({ message: 'Movie not found' });
+            }else{
+                return res.status(200).json(result);
+            }
+        }else{
+            return res.status(200).json(savedTv_series);
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
+
+
 
 
 module.exports = router

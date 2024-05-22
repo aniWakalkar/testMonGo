@@ -8,6 +8,7 @@ const authRouter = require("./routes/Authentication")
 const usersRouter = require("./routes/Users")
 const moviesRouter = require("./routes/Movies")
 const Tv_seriesRouter = require("./routes/Tvseries")
+const searchRouter = require("./routes/Search")
 
 
 // Middleware to parse JSON bodies
@@ -24,6 +25,7 @@ app.use('/api', authRouter);
 app.use('/api', usersRouter);
 app.use('/api', moviesRouter);
 app.use('/api', Tv_seriesRouter);
+app.use('/api', searchRouter);
 
 
 
