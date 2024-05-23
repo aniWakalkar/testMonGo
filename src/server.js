@@ -2,6 +2,7 @@ const db_connection = require('./config/Db_connect');
 db_connection()
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 require('dotenv').config();
 const authRouter = require("./routes/Authentication")
@@ -12,6 +13,7 @@ const searchRouter = require("./routes/Search")
 
 
 // Middleware to parse JSON bodies
+app.use(cors());
 app.use(express.json());
 
 
