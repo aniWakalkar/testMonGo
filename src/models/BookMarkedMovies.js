@@ -1,32 +1,19 @@
 const mongoose = require('mongoose');
 
-// Define the schema for the poster image and icon image
-const imageSchema = new mongoose.Schema({
-  url: { type: String}
-});
-
-// Define the schema for the ratings
-const ratingSchema = new mongoose.Schema({
-  tomatometer: { type: Number},
-  dtlLikedScore: { type: Number},
-  dtlScoreCount: { type: Number},
-  dtlWtsCount: { type: Number },
-  dtlWtsScore: { type: Number }
-});
-
 // Define the main movie schema
 const bookmarked_movie_schema = new mongoose.Schema({
-  emsId: { type: String, required : true},
-  emsVersionId: { type: String},
-  name: { type: String},
-  posterImage: { type: imageSchema},
-  height: { type: Number },
-  type: { type: String },
-  url: { type: String},
-  width: { type: Number },
-  sortEms: { type: String },
-  tomatoRating: { type: ratingSchema},
-  iconImage: { type: imageSchema}
+  big_image: { type: String, required: true },
+  description: { type: String, required: true },
+  genre: { type: [String], required: true },
+  id: { type: String, required: true, unique: true },
+  image: { type: String, required: true },
+  imdb_link: { type: String, required: true },
+  imdbid: { type: String, required: true, unique: true },
+  rank: { type: Number, required: true },
+  rating: { type: Number, required: true },
+  thumbnail: { type: String, required: true },
+  title: { type: String, required: true },
+  year: { type: String, required: true }
 });
 
 // Create and export the model

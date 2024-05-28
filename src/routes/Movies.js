@@ -89,17 +89,18 @@ router.post('/bookmark/set/movie', verifyToken, async (req, res) => {
         const {search_query} = req.body;
 
         const movie = {
-            emsId: search_query.emsId,
-            emsVersionId: search_query.emsVersionId,
-            name: search_query.name,
-            posterImage: search_query.posterImage,
-            height: search_query.height,
-            type: search_query.type,
-            url: search_query.url,
-            width: search_query.width,
-            sortEms: search_query.sortEms,
-            tomatoRating: search_query.tomatoRating,
-            iconImage: search_query.iconImage
+            big_image: search_query.big_image,
+            description: search_query.description,
+            genre: search_query.genre,
+            id: search_query.id,
+            image: search_query.image,
+            imdb_link: search_query.imdb_link,
+            imdbid: search_query.imdbid,
+            rank: search_query.rank,
+            rating: search_query.rating,
+            thumbnail: search_query.thumbnail,
+            title: search_query.title,
+            year: search_query.year
           };
 
         const BookMarkedMovies = await Bookmarked_Movie.create(movie);
@@ -131,9 +132,9 @@ router.delete('/bookmark/delete/movie', verifyToken, async (req, res) => {
             return res.status(400).send({ message: 'Please provide a movie name' });
         }
 
-        await Bookmarked_Movie.deleteOne({ _id: search_query._id })
+        await Bookmarked_Movie.deleteOne({ id: search_query.id })
 
-        return res.status(200).json({ message: 'Removed from bookmark successfully', _id : search_query._id});
+        return res.status(200).json({ message: 'Removed from bookmark successfully', id : search_query.id});
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Internal Server Error' });

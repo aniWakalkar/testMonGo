@@ -129,9 +129,9 @@ router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
 router.delete('/bookmark/delete/tvseries', verifyToken, async (req, res) => {
     try {
         const {search_query} = req.body;
-        await Bookmarked_TVSeries.deleteOne({ _id: search_query._id })
+        await Bookmarked_TVSeries.deleteOne({ id: search_query.id })
 
-        return res.status(200).json({ message: 'Removed from bookmark successfully', _id : search_query._id});
+        return res.status(200).json({ message: 'Removed from bookmark successfully', id : search_query.id});
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
