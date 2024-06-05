@@ -128,6 +128,7 @@ router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
 router.delete('/bookmark/delete/movie', verifyToken, async (req, res) => {
     try {
         const {search_query} = req.body;
+        console.log(search_query)
         if (!search_query) {
             return res.status(400).send({ message: 'Please provide a movie name' });
         }
