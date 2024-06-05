@@ -125,7 +125,7 @@ router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
     }
 });
 
-router.delete('/bookmark/delete/movie', verifyToken, async (req, res) => {
+router.post('/bookmark/delete/movie', verifyToken, async (req, res) => {
     try {
         const {search_query} = req.body;
         console.log(search_query, "______________________")
