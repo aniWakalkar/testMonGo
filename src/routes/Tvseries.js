@@ -126,14 +126,18 @@ router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
     }
 });
 
-router.delete('/bookmark/delete/tvseries', verifyToken, async (req, res) => {
+router.delete('/bookmark/delete/tvseries/:id', verifyToken, async (req, res) => {
     try {
-        const {search_query} = req.body;
-        await Bookmarked_TVSeries.deleteOne({ id: search_query.id })
+        const { id } = req.params;  
 
-        return res.status(200).json({ message: 'Removed from bookmark successfully', id : search_query.id});
+        if (!id) {
+            return res.status(400).send({ message: 'Please provide a series ID' });
+        }
+        await Bookmarked_TVSeries.deleteOne({ id: id });  // Assuming id is stored in the _id field
+
+        return res.status(200).json({ message: 'Removed from bookmark successfully', id: id });
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error deleting data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
