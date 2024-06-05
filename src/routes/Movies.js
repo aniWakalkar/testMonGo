@@ -132,7 +132,7 @@ router.delete('/bookmark/delete/movie/:id', verifyToken, async (req, res) => {
         if (!id) {
             return res.status(400).send({ message: 'Please provide a movie ID' });
         }
-        await Bookmarked_Movie.deleteOne({ _id: id });  // Assuming id is stored in the _id field
+        await Bookmarked_Movie.deleteOne({ id: id });  // Assuming id is stored in the _id field
 
         return res.status(200).json({ message: 'Removed from bookmark successfully', id: id });
     } catch (error) {
