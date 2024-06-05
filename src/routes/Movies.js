@@ -125,19 +125,18 @@ router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
     }
 });
 
-router.post('/bookmark/delete/movie', verifyToken, async (req, res) => {
+router.delete('/bookmark/delete/movie/:id', verifyToken, async (req, res) => {
     try {
-        const {search_query} = req.body;
-        console.log(search_query, "______________________")
-        if (!search_query) {
-            return res.status(400).send({ message: 'Please provide a movie name' });
+        const { id } = req.params;  
+
+        if (!id) {
+            return res.status(400).send({ message: 'Please provide a movie ID' });
         }
+        await Bookmarked_Movie.deleteOne({ _id: id });  // Assuming id is stored in the _id field
 
-        await Bookmarked_Movie.deleteOne({ id: search_query.id })
-
-        return res.status(200).json({ message: 'Removed from bookmark successfully', id : search_query.id});
+        return res.status(200).json({ message: 'Removed from bookmark successfully', id: id });
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error deleting data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
