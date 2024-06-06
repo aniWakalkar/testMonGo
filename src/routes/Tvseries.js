@@ -87,9 +87,9 @@ router.get('/get/tvseries', verifyToken, async (req, res) => {
 
 router.post('/bookmark/set/tvseries', verifyToken, async (req, res) => {
     try {
-        const { search_query } = req.body;
+        const { id } = req.body;
         const updatedSeries = await Tv_series.findOneAndUpdate(
-            { id: search_query.id },
+            { id: id },
             { $set: { bookmarked: true } },
             { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
         );
@@ -107,7 +107,7 @@ router.post('/bookmark/set/tvseries', verifyToken, async (req, res) => {
 
 router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
     try {
-        const BookMarkedTVseries = await Tv_series.find();
+        const BookMarkedTVseries = await Tv_series.find({ bookmarked: true });
         if (BookMarkedTVseries.length === 0) {
           return res.status(404).send({ message: 'Movies not found' });
         }

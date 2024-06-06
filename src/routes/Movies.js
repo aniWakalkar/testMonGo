@@ -86,9 +86,9 @@ router.get('/get/movie', verifyToken, async (req, res) => {
 
 router.post('/bookmark/set/movie', verifyToken, async (req, res) => {
     try {
-        const { search_query } = req.body;
+        const { id } = req.body;
         const updatedMovie = await Movie.findOneAndUpdate(
-            { id: search_query.id },
+            { id: id },
             { $set: { bookmarked: true } },
             { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
         );
@@ -106,7 +106,7 @@ router.post('/bookmark/set/movie', verifyToken, async (req, res) => {
 
 router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
     try {
-        const bookmarked_Movies = await Movie.find();
+        const bookmarked_Movies = await Movie.find({ bookmarked: true });
         if (!bookmarked_Movies) {
           return res.status(404).send({ message: 'Movies not found' });
         }
