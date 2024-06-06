@@ -108,9 +108,9 @@ router.post('/bookmark/set/tvseries', verifyToken, async (req, res) => {
 router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
     try {
         const BookMarkedTVseries = await Tv_series.find({ bookmarked: true });
-        if (BookMarkedTVseries.length === 0) {
-          return res.status(404).send({ message: 'Movies not found' });
-        }
+        if (!BookMarkedTVseries) {
+            return res.status(404).send({ message: 'Series not found' });
+          }
   
         res.status(200).json(BookMarkedTVseries);
     } catch (error) {
