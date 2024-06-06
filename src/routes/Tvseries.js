@@ -87,34 +87,27 @@ router.get('/get/tvseries', verifyToken, async (req, res) => {
 
 router.post('/bookmark/set/tvseries', verifyToken, async (req, res) => {
     try {
-        const {search_query} = req.body;
+        const { search_query } = req.body;
+        const updatedSeries = await Tv_series.findOneAndUpdate(
+            { id: search_query.id },
+            { $set: { bookmarked: true } },
+            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        );
 
-        const tvseries = {
-            big_image: search_query.big_image,
-            description: search_query.description,
-            genre: search_query.genre,
-            id: search_query.id,
-            image: search_query.image,
-            imdb_link: search_query.imdb_link,
-            imdbid: search_query.imdbid,
-            rank: search_query.rank,
-            rating: search_query.rating,
-            thumbnail: search_query.thumbnail,
-            title: search_query.title,
-            year: search_query.year
-          };
+        if (!updatedSeries) {
+            return res.status(404).json({ message: 'Movie not found' });
+        }
 
-        const BookMarkedTVseries = await Bookmarked_TVSeries.create(tvseries);
-        res.status(201).json(BookMarkedTVseries);
+        res.status(200).json(updatedSeries);
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error updating movie:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
 router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
     try {
-        const BookMarkedTVseries = await Bookmarked_TVSeries.find();
+        const BookMarkedTVseries = await Tv_series.find();
         if (BookMarkedTVseries.length === 0) {
           return res.status(404).send({ message: 'Movies not found' });
         }
@@ -128,16 +121,20 @@ router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
 
 router.delete('/bookmark/delete/tvseries/:id', verifyToken, async (req, res) => {
     try {
-        const { id } = req.params;  
+        const { id } = req.params;
+        const updatedSeries = await Tv_series.findOneAndUpdate(
+            { id: id },
+            { $set: { bookmarked: false } },
+            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        );
 
-        if (!id) {
-            return res.status(400).send({ message: 'Please provide a series ID' });
+        if (!updatedSeries) {
+            return res.status(404).json({ message: 'Movie not found' });
         }
-        await Bookmarked_TVSeries.deleteOne({ id: id });  // Assuming id is stored in the _id field
 
-        return res.status(200).json({ message: 'Removed from bookmark successfully', id: id });
+        res.status(200).json(updatedSeries);
     } catch (error) {
-        console.error('Error deleting data:', error);
+        console.error('Error updating movie:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });

@@ -86,34 +86,27 @@ router.get('/get/movie', verifyToken, async (req, res) => {
 
 router.post('/bookmark/set/movie', verifyToken, async (req, res) => {
     try {
-        const {search_query} = req.body;
-        console.log(search_query, "+++++++++++++++++++")
-        const movie = {
-            big_image: search_query.big_image,
-            description: search_query.description,
-            genre: search_query.genre,
-            id: search_query.id,
-            image: search_query.image,
-            imdb_link: search_query.imdb_link,
-            imdbid: search_query.imdbid,
-            rank: search_query.rank,
-            rating: search_query.rating,
-            thumbnail: search_query.thumbnail,
-            title: search_query.title,
-            year: search_query.year
-          };
+        const { search_query } = req.body;
+        const updatedMovie = await Movie.findOneAndUpdate(
+            { id: search_query.id },
+            { $set: { bookmarked: true } },
+            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        );
 
-        const BookMarkedMovies = await Bookmarked_Movie.create(movie);
-        res.status(201).json(BookMarkedMovies);
+        if (!updatedMovie) {
+            return res.status(404).json({ message: 'Movie not found' });
+        }
+
+        res.status(200).json(updatedMovie);
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error updating movie:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
 router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
     try {
-        const bookmarked_Movies = await Bookmarked_Movie.find();
+        const bookmarked_Movies = await Movie.find();
         if (!bookmarked_Movies) {
           return res.status(404).send({ message: 'Movies not found' });
         }
@@ -127,16 +120,20 @@ router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
 
 router.delete('/bookmark/delete/movie/:id', verifyToken, async (req, res) => {
     try {
-        const { id } = req.params;  
+        const { id } = req.params;
+        const updatedMovie = await Movie.findOneAndUpdate(
+            { id: id },
+            { $set: { bookmarked: false } },
+            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        );
 
-        if (!id) {
-            return res.status(400).send({ message: 'Please provide a movie ID' });
+        if (!updatedMovie) {
+            return res.status(404).json({ message: 'Movie not found' });
         }
-        await Bookmarked_Movie.deleteOne({ id: id });  // Assuming id is stored in the _id field
 
-        return res.status(200).json({ message: 'Removed from bookmark successfully', id: id });
+        res.status(200).json(updatedMovie);
     } catch (error) {
-        console.error('Error deleting data:', error);
+        console.error('Error updating movie:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });

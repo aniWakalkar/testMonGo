@@ -13,7 +13,8 @@ const tvSeries_schema = new mongoose.Schema({
   rating: { type: Number, required: true },
   thumbnail: { type: String, required: true },
   title: { type: String, required: true },
-  year: { type: String, required: true }
+  year: { type: String, required: true },
+  bookmarked: { type: Boolean , default:false}
 });
 
 // Create and export the model
