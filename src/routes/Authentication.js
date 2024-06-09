@@ -14,6 +14,14 @@ router.post('/signup', async (req, res) => {
     if (!email || !password) {
         return res.status(400).send({ message: 'Please fill all fields' });
     }
+    try{
+        const oldUser = await User.findOne({ email });
+        if (oldUser) {
+            return res.status(409).send({ message: 'User already exist' });
+        }
+    } catch (err) {
+        res.status(400).send({ message: err.message });
+    }
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({
