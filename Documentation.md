@@ -201,7 +201,7 @@
 **BodyType:** raw
 #### Payload:
     {
-        "search_query" :"avengers"
+        "search_query" :"rings"
     }
 
 #### Response
@@ -209,22 +209,25 @@
     ```json
     [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "6670253f0757a951dc5d746e",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+            "genre": [
+            "Action",
+            "Adventure",
+            "Drama"
+            ],
+            "id": "top7",
+            "image": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0167260",
+            "imdbid": "tt0167260",
+            "rank": 7,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY67_CR0,0,45,67_AL_.jpg",
+            "title": "The Lord of the Rings: The Return of the King",
+            "year": "2003",
+            "bookmarks": [],
+            "__v": 0
         }
     ]
     ```
@@ -438,26 +441,32 @@
 #### Response
 - **Success: 200**
     ```json
-    [
-        {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
-    ]
+        [
+            {
+                "_id": "6670254b0757a951dc5d7530",
+                "big_image": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5",
+                "description": "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future.",
+                "genre": [
+                "Crime",
+                "Drama",
+                "Thriller"
+                ],
+                "id": "top1",
+                "image": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_QL75_UX380_CR0,1,380,562_.jpg",
+                "imdb_link": "https://www.imdb.com/title/tt0903747",
+                "imdbid": "tt0903747",
+                "rank": 1,
+                "rating": 9.5,
+                "thumbnail": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_UY67_CR0,0,45,67_AL_.jpg",
+                "title": "Breaking Bad",
+                "year": "2008-2013",
+                "bookmarked": false,
+                "__v": 0,
+                "bookmarks": [
+                "667024ca0757a951dc5d7464"
+                ]
+            }
+        ]
     ```
 - **Failure: 400**
     ```json

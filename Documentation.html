@@ -98,7 +98,7 @@
 </ul>
 <hr>
 <hr>
-<h3 class="code-line" data-line-start="92" data-line-end="93"><a id="3_Get_users_details_from_database_92"></a>3. Get users details from database</h3>
+<h3 class="code-line" data-line-start="92" data-line-end="93"><a id="3_Get_all_users_from_database_92"></a>3. Get all users from database</h3>
 <p class="has-line-data" data-line-start="93" data-line-end="95"><strong>URL:</strong> <code>/api/users</code><br>
 <strong>Method:</strong> <code>GET</code></p>
 <h4 class="code-line" data-line-start="95" data-line-end="96"><a id="Request_Headers_95"></a>Request Headers</h4>
@@ -107,71 +107,45 @@
 </ul>
 <h4 class="code-line" data-line-start="97" data-line-end="98"><a id="Response_97"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="98" data-line-end="121"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="100" data-line-end="121" class="language-json">[
+<li class="has-line-data" data-line-start="98" data-line-end="109"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="100" data-line-end="109" class="language-json">[
     {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span>
     </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
 ]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="121" data-line-end="128"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="123" data-line-end="127" class="language-json">{
+<li class="has-line-data" data-line-start="109" data-line-end="116"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="111" data-line-end="115" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
-<h3 class="code-line" data-line-start="128" data-line-end="129"><a id="4_Get_all_users_128"></a>4. Get all users</h3>
-<p class="has-line-data" data-line-start="129" data-line-end="131"><strong>URL:</strong> <code>/api/userid</code><br>
+<h3 class="code-line" data-line-start="116" data-line-end="117"><a id="4_Get_user_details_from_database_116"></a>4. Get user details from database</h3>
+<p class="has-line-data" data-line-start="117" data-line-end="119"><strong>URL:</strong> <code>/api/userid</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="131" data-line-end="132"><a id="Request_Headers_131"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="119" data-line-end="120"><a id="Request_Headers_119"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="132" data-line-end="133"><code>Authorization</code>: Bearer token</li>
+<li class="has-line-data" data-line-start="120" data-line-end="121"><code>Authorization</code>: Bearer token</li>
 </ul>
-<h4 class="code-line" data-line-start="133" data-line-end="134"><a id="Response_133"></a>Response</h4>
+<h4 class="code-line" data-line-start="121" data-line-end="122"><a id="Response_121"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="134" data-line-end="157"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="136" data-line-end="157" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
-]
+<li class="has-line-data" data-line-start="122" data-line-end="131"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="124" data-line-end="131" class="language-json">{
+    "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+</span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="157" data-line-end="163"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="159" data-line-end="163" class="language-json">{
+<li class="has-line-data" data-line-start="131" data-line-end="137"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="133" data-line-end="137" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"'User not found'"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="163" data-line-end="170"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="165" data-line-end="169" class="language-json">{
+<li class="has-line-data" data-line-start="137" data-line-end="144"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="139" data-line-end="143" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
@@ -179,236 +153,234 @@
 </ul>
 <hr>
 <hr>
-<h3 class="code-line" data-line-start="173" data-line-end="174"><a id="5_Get_all_the_movies_from_database_173"></a>5. Get all the movies from database</h3>
-<p class="has-line-data" data-line-start="174" data-line-end="176"><strong>URL:</strong> <code>/api/get/all/movies</code><br>
+<h3 class="code-line" data-line-start="147" data-line-end="148"><a id="5_Get_all_the_movies_from_database_147"></a>5. Get all the movies from database</h3>
+<p class="has-line-data" data-line-start="148" data-line-end="150"><strong>URL:</strong> <code>/api/get/all/movies</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="176" data-line-end="177"><a id="Request_Headers_176"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="150" data-line-end="151"><a id="Request_Headers_150"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="177" data-line-end="178"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="151" data-line-end="152"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="178" data-line-end="179"><a id="Response_178"></a>Response</h4>
+<h4 class="code-line" data-line-start="152" data-line-end="153"><a id="Response_152"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="179" data-line-end="202"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="181" data-line-end="202" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
-]
+<li class="has-line-data" data-line-start="153" data-line-end="180"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="155" data-line-end="180" class="language-json">{
+    "<span class="hljs-attribute">movies</span>": <span class="hljs-value">[ {
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Action"</span>,
+            <span class="hljs-string">"Crime"</span>,
+            <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        } ]</span>,
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+</span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="202" data-line-end="208"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="204" data-line-end="208" class="language-json">{
+<li class="has-line-data" data-line-start="180" data-line-end="186"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="182" data-line-end="186" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Movies not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="208" data-line-end="215"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="210" data-line-end="214" class="language-json">{
+<li class="has-line-data" data-line-start="186" data-line-end="193"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="188" data-line-end="192" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="216" data-line-end="217"><a id="6_Get_movie_from_database_216"></a>6. Get movie from database</h3>
-<p class="has-line-data" data-line-start="217" data-line-end="219"><strong>URL:</strong> <code>/api/get/movie</code><br>
+<h3 class="code-line" data-line-start="194" data-line-end="195"><a id="6_Get_movie_from_database_194"></a>6. Get movie from database</h3>
+<p class="has-line-data" data-line-start="195" data-line-end="197"><strong>URL:</strong> <code>/api/get/movie</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="219" data-line-end="220"><a id="Request_Headers_219"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="197" data-line-end="198"><a id="Request_Headers_197"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="220" data-line-end="222"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="198" data-line-end="200"><code>x-access-token</code>: token</li>
 </ul>
-<p class="has-line-data" data-line-start="222" data-line-end="223"><strong>BodyType:</strong> raw</p>
-<h4 class="code-line" data-line-start="223" data-line-end="224"><a id="Payload_223"></a>Payload:</h4>
+<p class="has-line-data" data-line-start="200" data-line-end="201"><strong>BodyType:</strong> raw</p>
+<h4 class="code-line" data-line-start="201" data-line-end="202"><a id="Payload_201"></a>Payload:</h4>
 <pre><code>{
-    &quot;search_query&quot; :&quot;avengers&quot;
+    &quot;search_query&quot; :&quot;rings&quot;
 }
 </code></pre>
-<h4 class="code-line" data-line-start="228" data-line-end="229"><a id="Response_228"></a>Response</h4>
+<h4 class="code-line" data-line-start="206" data-line-end="207"><a id="Response_206"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="229" data-line-end="252"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="231" data-line-end="252" class="language-json">[
+<li class="has-line-data" data-line-start="207" data-line-end="233"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="209" data-line-end="233" class="language-json">[
     {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670253f0757a951dc5d746e"</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Action"</span>,
+        <span class="hljs-string">"Adventure"</span>,
+        <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top7"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0167260"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0167260"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">7</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY67_CR0,0,45,67_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Lord of the Rings: The Return of the King"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2003"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span>
     </span>}
 ]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="252" data-line-end="258"><strong>Failure: 400</strong><pre><code class="has-line-data" data-line-start="254" data-line-end="258" class="language-json">{
+<li class="has-line-data" data-line-start="233" data-line-end="239"><strong>Failure: 400</strong><pre><code class="has-line-data" data-line-start="235" data-line-end="239" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Please provide a movie name"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="258" data-line-end="264"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="260" data-line-end="264" class="language-json">{
+<li class="has-line-data" data-line-start="239" data-line-end="245"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="241" data-line-end="245" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Movies not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="264" data-line-end="271"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="266" data-line-end="270" class="language-json">{
+<li class="has-line-data" data-line-start="245" data-line-end="252"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="247" data-line-end="251" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="272" data-line-end="273"><a id="7_Bookmark_a_movie_272"></a>7. Bookmark a movie</h3>
-<p class="has-line-data" data-line-start="273" data-line-end="275"><strong>URL:</strong> <code>/api/bookmark/set/movie</code><br>
+<h3 class="code-line" data-line-start="253" data-line-end="254"><a id="7_Bookmark_a_movie_253"></a>7. Bookmark a movie</h3>
+<p class="has-line-data" data-line-start="254" data-line-end="256"><strong>URL:</strong> <code>/api/bookmark/set/movie</code><br>
 <strong>Method:</strong> <code>POST</code></p>
-<h4 class="code-line" data-line-start="275" data-line-end="276"><a id="Request_Headers_275"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="256" data-line-end="257"><a id="Request_Headers_256"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="276" data-line-end="278"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="257" data-line-end="259"><code>x-access-token</code>: token</li>
 </ul>
-<p class="has-line-data" data-line-start="278" data-line-end="279"><strong>BodyType:</strong> raw</p>
-<h4 class="code-line" data-line-start="279" data-line-end="280"><a id="Payload_279"></a>Payload:</h4>
+<p class="has-line-data" data-line-start="259" data-line-end="260"><strong>BodyType:</strong> raw</p>
+<h4 class="code-line" data-line-start="260" data-line-end="261"><a id="Payload_260"></a>Payload:</h4>
 <pre><code>{
     &quot;id&quot;: &quot;6670254b0757a951dc5d7534&quot;
 }
 </code></pre>
-<h4 class="code-line" data-line-start="284" data-line-end="285"><a id="Response_284"></a>Response</h4>
+<h4 class="code-line" data-line-start="265" data-line-end="266"><a id="Response_265"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="285" data-line-end="308"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="287" data-line-end="308" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+<li class="has-line-data" data-line-start="266" data-line-end="293"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="268" data-line-end="293" class="language-json">    {
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670253f0757a951dc5d746a"</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Action"</span>,
+            <span class="hljs-string">"Crime"</span>,
+            <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[
+            <span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+        ]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">bookmarked</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
-]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="308" data-line-end="314"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="310" data-line-end="314" class="language-json">{
+<li class="has-line-data" data-line-start="293" data-line-end="299"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="295" data-line-end="299" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Movies not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="314" data-line-end="320"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="316" data-line-end="320" class="language-json">{
+<li class="has-line-data" data-line-start="299" data-line-end="305"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="301" data-line-end="305" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="321" data-line-end="322"><a id="8_Get_all_movies_from_bookmark_321"></a>8. Get all movies from bookmark</h3>
-<p class="has-line-data" data-line-start="322" data-line-end="324"><strong>URL:</strong> <code>/api/bookmark/get/movies</code><br>
+<h3 class="code-line" data-line-start="306" data-line-end="307"><a id="8_Get_all_movies_from_bookmark_306"></a>8. Get all movies from bookmark</h3>
+<p class="has-line-data" data-line-start="307" data-line-end="309"><strong>URL:</strong> <code>/api/bookmark/get/movies</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="324" data-line-end="325"><a id="Request_Headers_324"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="309" data-line-end="310"><a id="Request_Headers_309"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="325" data-line-end="326"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="310" data-line-end="311"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="326" data-line-end="327"><a id="Response_326"></a>Response</h4>
+<h4 class="code-line" data-line-start="311" data-line-end="312"><a id="Response_311"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="327" data-line-end="350"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="329" data-line-end="350" class="language-json">[
+<li class="has-line-data" data-line-start="312" data-line-end="341"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="314" data-line-end="341" class="language-json">[
     {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670253f0757a951dc5d746a"</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Action"</span>,
+        <span class="hljs-string">"Crime"</span>,
+        <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[
+        <span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+        ]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">bookmarked</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
 ]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="350" data-line-end="356"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="352" data-line-end="356" class="language-json">{
+<li class="has-line-data" data-line-start="341" data-line-end="347"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="343" data-line-end="347" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Movies not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="356" data-line-end="363"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="358" data-line-end="362" class="language-json">{
+<li class="has-line-data" data-line-start="347" data-line-end="354"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="349" data-line-end="353" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="364" data-line-end="365"><a id="9_Delete_movie_from_bookmark_364"></a>9. Delete movie from bookmark</h3>
-<p class="has-line-data" data-line-start="365" data-line-end="367"><strong>URL:</strong> <code>/api/bookmark/delete/movie/:id</code><br>
+<h3 class="code-line" data-line-start="355" data-line-end="356"><a id="9_Delete_movie_from_bookmark_355"></a>9. Delete movie from bookmark</h3>
+<p class="has-line-data" data-line-start="356" data-line-end="358"><strong>URL:</strong> <code>/api/bookmark/delete/movie/:id</code><br>
 <strong>Method:</strong> <code>DELETE</code></p>
-<h4 class="code-line" data-line-start="367" data-line-end="368"><a id="Request_Headers_367"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="358" data-line-end="359"><a id="Request_Headers_358"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="368" data-line-end="369"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="359" data-line-end="360"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="369" data-line-end="370"><a id="Parameters_369"></a>Parameters</h4>
+<h4 class="code-line" data-line-start="360" data-line-end="361"><a id="Parameters_360"></a>Parameters</h4>
 <ul>
-<li class="has-line-data" data-line-start="370" data-line-end="371"><code>id</code></li>
+<li class="has-line-data" data-line-start="361" data-line-end="362"><code>id</code></li>
 </ul>
-<h4 class="code-line" data-line-start="371" data-line-end="372"><a id="Response_371"></a>Response</h4>
+<h4 class="code-line" data-line-start="362" data-line-end="363"><a id="Response_362"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="372" data-line-end="395"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="374" data-line-end="395" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
-]
+<li class="has-line-data" data-line-start="363" data-line-end="367"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="365" data-line-end="367" class="language-json">{ "<span class="hljs-attribute">message</span>" : <span class="hljs-value"><span class="hljs-string">"Removed from bookmark successfully"</span></span>, "<span class="hljs-attribute">id</span>" : <span class="hljs-value"><span class="hljs-string">""</span> </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="395" data-line-end="401"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="397" data-line-end="401" class="language-json">{
+<li class="has-line-data" data-line-start="367" data-line-end="373"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="369" data-line-end="373" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Movies not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="401" data-line-end="407"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="403" data-line-end="407" class="language-json">{
+<li class="has-line-data" data-line-start="373" data-line-end="379"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="375" data-line-end="379" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
@@ -416,256 +388,257 @@
 </ul>
 <hr>
 <hr>
-<h3 class="code-line" data-line-start="410" data-line-end="411"><a id="10_Get_all_the_tvSeries_from_database_410"></a>10. Get all the tvSeries from database</h3>
-<p class="has-line-data" data-line-start="411" data-line-end="413"><strong>URL:</strong> <code>/api/get/all/tvseries</code><br>
+<h3 class="code-line" data-line-start="382" data-line-end="383"><a id="10_Get_all_the_tvSeries_from_database_382"></a>10. Get all the tvSeries from database</h3>
+<p class="has-line-data" data-line-start="383" data-line-end="385"><strong>URL:</strong> <code>/api/get/all/tvseries</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="413" data-line-end="414"><a id="Request_Headers_413"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="385" data-line-end="386"><a id="Request_Headers_385"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="414" data-line-end="415"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="386" data-line-end="387"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="415" data-line-end="416"><a id="Response_415"></a>Response</h4>
+<h4 class="code-line" data-line-start="387" data-line-end="388"><a id="Response_387"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="416" data-line-end="439"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="418" data-line-end="439" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
-]
+<li class="has-line-data" data-line-start="388" data-line-end="415"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="390" data-line-end="415" class="language-json">{
+    "<span class="hljs-attribute">series</span>": <span class="hljs-value">[ {
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Action"</span>,
+            <span class="hljs-string">"Crime"</span>,
+            <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        } ]</span>,
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+</span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="439" data-line-end="445"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="441" data-line-end="445" class="language-json">{
+<li class="has-line-data" data-line-start="415" data-line-end="421"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="417" data-line-end="421" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"tvSeries not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="445" data-line-end="451"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="447" data-line-end="451" class="language-json">{
+<li class="has-line-data" data-line-start="421" data-line-end="427"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="423" data-line-end="427" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="452" data-line-end="453"><a id="11_Get_tvSeries_from_database_452"></a>11. Get tvSeries from database</h3>
-<p class="has-line-data" data-line-start="453" data-line-end="455"><strong>URL:</strong> <code>/api/get/tvseries</code><br>
+<h3 class="code-line" data-line-start="428" data-line-end="429"><a id="11_Get_tvSeries_from_database_428"></a>11. Get tvSeries from database</h3>
+<p class="has-line-data" data-line-start="429" data-line-end="431"><strong>URL:</strong> <code>/api/get/tvseries</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="455" data-line-end="456"><a id="Request_Headers_455"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="431" data-line-end="432"><a id="Request_Headers_431"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="456" data-line-end="458"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="432" data-line-end="434"><code>x-access-token</code>: token</li>
 </ul>
-<p class="has-line-data" data-line-start="458" data-line-end="459"><strong>BodyType:</strong> raw</p>
-<h4 class="code-line" data-line-start="459" data-line-end="460"><a id="Payload_459"></a>Payload:</h4>
+<p class="has-line-data" data-line-start="434" data-line-end="435"><strong>BodyType:</strong> raw</p>
+<h4 class="code-line" data-line-start="435" data-line-end="436"><a id="Payload_435"></a>Payload:</h4>
 <pre><code>{
     &quot;search_query&quot; :&quot;avengers&quot;
 }
 </code></pre>
-<h4 class="code-line" data-line-start="464" data-line-end="465"><a id="Response_464"></a>Response</h4>
+<h4 class="code-line" data-line-start="440" data-line-end="441"><a id="Response_440"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="465" data-line-end="488">
-<p class="has-line-data" data-line-start="465" data-line-end="466"><strong>Success: 200</strong></p>
-<pre><code class="has-line-data" data-line-start="467" data-line-end="488" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
-]
+<li class="has-line-data" data-line-start="441" data-line-end="470">
+<p class="has-line-data" data-line-start="441" data-line-end="442"><strong>Success: 200</strong></p>
+<pre><code class="has-line-data" data-line-start="443" data-line-end="470" class="language-json">    [
+        {
+            "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670254b0757a951dc5d7530"</span></span>,
+            "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future."</span></span>,
+            "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Crime"</span>,
+            <span class="hljs-string">"Drama"</span>,
+            <span class="hljs-string">"Thriller"</span>
+            ]</span>,
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top1"</span></span>,
+            "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_QL75_UX380_CR0,1,380,562_.jpg"</span></span>,
+            "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0903747"</span></span>,
+            "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0903747"</span></span>,
+            "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+            "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9.5</span></span>,
+            "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_UY67_CR0,0,45,67_AL_.jpg"</span></span>,
+            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Breaking Bad"</span></span>,
+            "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008-2013"</span></span>,
+            "<span class="hljs-attribute">bookmarked</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+            "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+            "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[
+            <span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+            ]
+        </span>}
+    ]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="488" data-line-end="494">
-<p class="has-line-data" data-line-start="488" data-line-end="489"><strong>Failure: 400</strong></p>
-<pre><code class="has-line-data" data-line-start="490" data-line-end="494" class="language-json">{
+<li class="has-line-data" data-line-start="470" data-line-end="476">
+<p class="has-line-data" data-line-start="470" data-line-end="471"><strong>Failure: 400</strong></p>
+<pre><code class="has-line-data" data-line-start="472" data-line-end="476" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Please provide a movie name"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="494" data-line-end="501">
-<p class="has-line-data" data-line-start="494" data-line-end="495"><strong>Failure: 404</strong></p>
-<pre><code class="has-line-data" data-line-start="496" data-line-end="500" class="language-json">{
+<li class="has-line-data" data-line-start="476" data-line-end="483">
+<p class="has-line-data" data-line-start="476" data-line-end="477"><strong>Failure: 404</strong></p>
+<pre><code class="has-line-data" data-line-start="478" data-line-end="482" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"tvSeries not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="501" data-line-end="507">
-<p class="has-line-data" data-line-start="501" data-line-end="502"><strong>Failure: 500</strong></p>
-<pre><code class="has-line-data" data-line-start="503" data-line-end="507" class="language-json">{
+<li class="has-line-data" data-line-start="483" data-line-end="489">
+<p class="has-line-data" data-line-start="483" data-line-end="484"><strong>Failure: 500</strong></p>
+<pre><code class="has-line-data" data-line-start="485" data-line-end="489" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="508" data-line-end="509"><a id="12_Bookmark_a_tvSeries_508"></a>12. Bookmark a tvSeries</h3>
-<p class="has-line-data" data-line-start="509" data-line-end="511"><strong>URL:</strong> <code>/api/bookmark/set/tvseries</code><br>
+<h3 class="code-line" data-line-start="490" data-line-end="491"><a id="12_Bookmark_a_tvSeries_490"></a>12. Bookmark a tvSeries</h3>
+<p class="has-line-data" data-line-start="491" data-line-end="493"><strong>URL:</strong> <code>/api/bookmark/set/tvseries</code><br>
 <strong>Method:</strong> <code>POST</code></p>
-<h4 class="code-line" data-line-start="511" data-line-end="512"><a id="Request_Headers_511"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="493" data-line-end="494"><a id="Request_Headers_493"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="512" data-line-end="514"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="494" data-line-end="496"><code>x-access-token</code>: token</li>
 </ul>
-<p class="has-line-data" data-line-start="514" data-line-end="515"><strong>BodyType:</strong> raw</p>
-<h4 class="code-line" data-line-start="515" data-line-end="516"><a id="Payload_515"></a>Payload:</h4>
+<p class="has-line-data" data-line-start="496" data-line-end="497"><strong>BodyType:</strong> raw</p>
+<h4 class="code-line" data-line-start="497" data-line-end="498"><a id="Payload_497"></a>Payload:</h4>
 <pre><code>{
     &quot;id&quot;: &quot;6670254b0757a951dc5d7534&quot;
 }
 </code></pre>
-<h4 class="code-line" data-line-start="520" data-line-end="521"><a id="Response_520"></a>Response</h4>
+<h4 class="code-line" data-line-start="502" data-line-end="503"><a id="Response_502"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="521" data-line-end="544">
-<p class="has-line-data" data-line-start="521" data-line-end="522"><strong>Success: 200</strong></p>
-<pre><code class="has-line-data" data-line-start="523" data-line-end="544" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+<li class="has-line-data" data-line-start="503" data-line-end="530">
+<p class="has-line-data" data-line-start="503" data-line-end="504"><strong>Success: 200</strong></p>
+<pre><code class="has-line-data" data-line-start="505" data-line-end="530" class="language-json">    {
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670253f0757a951dc5d746a"</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Action"</span>,
+            <span class="hljs-string">"Crime"</span>,
+            <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[
+            <span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+        ]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">bookmarked</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
-]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="544" data-line-end="551">
-<p class="has-line-data" data-line-start="544" data-line-end="545"><strong>Failure: 404</strong></p>
-<pre><code class="has-line-data" data-line-start="546" data-line-end="550" class="language-json">{
+<li class="has-line-data" data-line-start="530" data-line-end="537">
+<p class="has-line-data" data-line-start="530" data-line-end="531"><strong>Failure: 404</strong></p>
+<pre><code class="has-line-data" data-line-start="532" data-line-end="536" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"tvSeries not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="551" data-line-end="558">
-<p class="has-line-data" data-line-start="551" data-line-end="552"><strong>Failure: 500</strong></p>
-<pre><code class="has-line-data" data-line-start="553" data-line-end="557" class="language-json">{
+<li class="has-line-data" data-line-start="537" data-line-end="544">
+<p class="has-line-data" data-line-start="537" data-line-end="538"><strong>Failure: 500</strong></p>
+<pre><code class="has-line-data" data-line-start="539" data-line-end="543" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="559" data-line-end="560"><a id="13_Get_all_tvSeries_from_bookmark_559"></a>13. Get all tvSeries from bookmark</h3>
-<p class="has-line-data" data-line-start="560" data-line-end="562"><strong>URL:</strong> <code>/api/bookmark/get/tvseries</code><br>
+<h3 class="code-line" data-line-start="545" data-line-end="546"><a id="13_Get_all_tvSeries_from_bookmark_545"></a>13. Get all tvSeries from bookmark</h3>
+<p class="has-line-data" data-line-start="546" data-line-end="548"><strong>URL:</strong> <code>/api/bookmark/get/tvseries</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="562" data-line-end="563"><a id="Request_Headers_562"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="548" data-line-end="549"><a id="Request_Headers_548"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="563" data-line-end="564"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="549" data-line-end="550"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="564" data-line-end="565"><a id="Response_564"></a>Response</h4>
+<h4 class="code-line" data-line-start="550" data-line-end="551"><a id="Response_550"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="565" data-line-end="588">
-<p class="has-line-data" data-line-start="565" data-line-end="566"><strong>Success: 200</strong></p>
-<pre><code class="has-line-data" data-line-start="567" data-line-end="588" class="language-json">[
+<li class="has-line-data" data-line-start="551" data-line-end="580">
+<p class="has-line-data" data-line-start="551" data-line-end="552"><strong>Success: 200</strong></p>
+<pre><code class="has-line-data" data-line-start="553" data-line-end="580" class="language-json">[
     {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670253f0757a951dc5d746a"</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Action"</span>,
+        <span class="hljs-string">"Crime"</span>,
+        <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[
+        <span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+        ]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">bookmarked</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
 ]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="588" data-line-end="595">
-<p class="has-line-data" data-line-start="588" data-line-end="589"><strong>Failure: 404</strong></p>
-<pre><code class="has-line-data" data-line-start="590" data-line-end="594" class="language-json">{
+<li class="has-line-data" data-line-start="580" data-line-end="587">
+<p class="has-line-data" data-line-start="580" data-line-end="581"><strong>Failure: 404</strong></p>
+<pre><code class="has-line-data" data-line-start="582" data-line-end="586" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"tvSeries not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="595" data-line-end="602">
-<p class="has-line-data" data-line-start="595" data-line-end="596"><strong>Failure: 500</strong></p>
-<pre><code class="has-line-data" data-line-start="597" data-line-end="601" class="language-json">{
+<li class="has-line-data" data-line-start="587" data-line-end="594">
+<p class="has-line-data" data-line-start="587" data-line-end="588"><strong>Failure: 500</strong></p>
+<pre><code class="has-line-data" data-line-start="589" data-line-end="593" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
 </li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start="603" data-line-end="604"><a id="14_Delete_tvSeries_from_bookmark_603"></a>14. Delete tvSeries from bookmark</h3>
-<p class="has-line-data" data-line-start="604" data-line-end="606"><strong>URL:</strong> <code>/api/bookmark/delete/tvSeries/:id</code><br>
+<h3 class="code-line" data-line-start="595" data-line-end="596"><a id="14_Delete_tvSeries_from_bookmark_595"></a>14. Delete tvSeries from bookmark</h3>
+<p class="has-line-data" data-line-start="596" data-line-end="598"><strong>URL:</strong> <code>/api/bookmark/delete/tvSeries/:id</code><br>
 <strong>Method:</strong> <code>DELETE</code></p>
-<h4 class="code-line" data-line-start="606" data-line-end="607"><a id="Request_Headers_606"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="598" data-line-end="599"><a id="Request_Headers_598"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="607" data-line-end="608"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="599" data-line-end="600"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="608" data-line-end="609"><a id="Parameters_608"></a>Parameters</h4>
+<h4 class="code-line" data-line-start="600" data-line-end="601"><a id="Parameters_600"></a>Parameters</h4>
 <ul>
-<li class="has-line-data" data-line-start="609" data-line-end="610"><code>id</code></li>
+<li class="has-line-data" data-line-start="601" data-line-end="602"><code>id</code></li>
 </ul>
-<h4 class="code-line" data-line-start="610" data-line-end="611"><a id="Response_610"></a>Response</h4>
+<h4 class="code-line" data-line-start="602" data-line-end="603"><a id="Response_602"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="611" data-line-end="634"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="613" data-line-end="634" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>}
-]
+<li class="has-line-data" data-line-start="603" data-line-end="607"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="605" data-line-end="607" class="language-json">    { "<span class="hljs-attribute">message</span>" : <span class="hljs-value"><span class="hljs-string">"Removed from bookmark successfully"</span></span>, "<span class="hljs-attribute">id</span>" : <span class="hljs-value"><span class="hljs-string">""</span> </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="634" data-line-end="640"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="636" data-line-end="640" class="language-json">{
+<li class="has-line-data" data-line-start="607" data-line-end="613"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="609" data-line-end="613" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"tvSeries not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="640" data-line-end="646"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="642" data-line-end="646" class="language-json">{
+<li class="has-line-data" data-line-start="613" data-line-end="619"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="615" data-line-end="619" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
@@ -673,48 +646,52 @@
 </ul>
 <hr>
 <hr>
-<h3 class="code-line" data-line-start="649" data-line-end="650"><a id="15_Get_Search_value_649"></a>15. Get Search value</h3>
-<p class="has-line-data" data-line-start="650" data-line-end="652"><strong>URL:</strong> <code>/api/search</code><br>
+<h3 class="code-line" data-line-start="622" data-line-end="623"><a id="15_Get_Search_value_622"></a>15. Get Search value</h3>
+<p class="has-line-data" data-line-start="623" data-line-end="625"><strong>URL:</strong> <code>/api/search</code><br>
 <strong>Method:</strong> <code>GET</code></p>
-<h4 class="code-line" data-line-start="652" data-line-end="653"><a id="Request_Headers_652"></a>Request Headers</h4>
+<h4 class="code-line" data-line-start="625" data-line-end="626"><a id="Request_Headers_625"></a>Request Headers</h4>
 <ul>
-<li class="has-line-data" data-line-start="653" data-line-end="654"><code>x-access-token</code>: token</li>
+<li class="has-line-data" data-line-start="626" data-line-end="627"><code>x-access-token</code>: token</li>
 </ul>
-<h4 class="code-line" data-line-start="654" data-line-end="655"><a id="Response_654"></a>Response</h4>
+<h4 class="code-line" data-line-start="627" data-line-end="628"><a id="Response_627"></a>Response</h4>
 <ul>
-<li class="has-line-data" data-line-start="655" data-line-end="678"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="657" data-line-end="678" class="language-json">[
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e255"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inception"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Christopher Nolan"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"2010-07-16"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Science Fiction"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
-    </span>},
-    {
-        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"60d9c6b8f8aabd0015e4e256"</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Matrix"</span></span>,
-        "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">"Lana Wachowski, Lilly Wachowski"</span></span>,
-        "<span class="hljs-attribute">release_date</span>": <span class="hljs-value"><span class="hljs-string">"1999-03-31"</span></span>,
-        "<span class="hljs-attribute">genre</span>": <span class="hljs-value"><span class="hljs-string">"Action"</span></span>,
-        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span></span>,
-        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2023-06-12T12:00:00Z"</span>
+<li class="has-line-data" data-line-start="628" data-line-end="655"><strong>Success: 200</strong><pre><code class="has-line-data" data-line-start="630" data-line-end="655" class="language-json">    {
+        "<span class="hljs-attribute">_id</span>": <span class="hljs-value"><span class="hljs-string">"6670253f0757a951dc5d746a"</span></span>,
+        "<span class="hljs-attribute">big_image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."</span></span>,
+        "<span class="hljs-attribute">genre</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Action"</span>,
+            <span class="hljs-string">"Crime"</span>,
+            <span class="hljs-string">"Drama"</span>
+        ]</span>,
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"top3"</span></span>,
+        "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg"</span></span>,
+        "<span class="hljs-attribute">imdb_link</span>": <span class="hljs-value"><span class="hljs-string">"https://www.imdb.com/title/tt0468569"</span></span>,
+        "<span class="hljs-attribute">imdbid</span>": <span class="hljs-value"><span class="hljs-string">"tt0468569"</span></span>,
+        "<span class="hljs-attribute">rank</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">rating</span>": <span class="hljs-value"><span class="hljs-number">9</span></span>,
+        "<span class="hljs-attribute">thumbnail</span>": <span class="hljs-value"><span class="hljs-string">"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg"</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"The Dark Knight"</span></span>,
+        "<span class="hljs-attribute">year</span>": <span class="hljs-value"><span class="hljs-string">"2008"</span></span>,
+        "<span class="hljs-attribute">bookmarks</span>": <span class="hljs-value">[
+            <span class="hljs-string">"667024ca0757a951dc5d7464"</span>
+        ]</span>,
+        "<span class="hljs-attribute">__v</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">bookmarked</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
-]
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="678" data-line-end="684"><strong>Failure: 400</strong><pre><code class="has-line-data" data-line-start="680" data-line-end="684" class="language-json">{
+<li class="has-line-data" data-line-start="655" data-line-end="661"><strong>Failure: 400</strong><pre><code class="has-line-data" data-line-start="657" data-line-end="661" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Please provide a search value"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="684" data-line-end="690"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="686" data-line-end="690" class="language-json">{
+<li class="has-line-data" data-line-start="661" data-line-end="667"><strong>Failure: 404</strong><pre><code class="has-line-data" data-line-start="663" data-line-end="667" class="language-json">{
     "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span>
 </span>}
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="690" data-line-end="696"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="692" data-line-end="696" class="language-json">{
+<li class="has-line-data" data-line-start="667" data-line-end="673"><strong>Failure: 500</strong><pre><code class="has-line-data" data-line-start="669" data-line-end="673" class="language-json">{
     "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Internal Server Error"</span>
 </span>}
 </code></pre>
