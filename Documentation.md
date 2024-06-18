@@ -90,7 +90,7 @@
 ----
 
 
-### 3. Get users details from database
+### 3. Get all users from database
 **URL:** `/api/users`
 **Method:** `GET`
 #### Request Headers
@@ -100,23 +100,11 @@
     ```json
     [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "",
+            "email": "",
+            "password": "",
+            "__v": 0
         },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
     ]
     ```
 - **Failure: 500**
@@ -126,7 +114,7 @@
     }
     ```
 
-### 4. Get all users
+### 4. Get user details from database
 **URL:** `/api/userid`
 **Method:** `GET`
 #### Request Headers
@@ -134,26 +122,12 @@
 #### Response
 - **Success: 200**
     ```json
-    [
-        {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
-    ]
+    {
+        "_id": "",
+        "email": "",
+        "password": "",
+        "__v": 0
+    }
     ```
 - **Failure: 404**
     ```json
@@ -179,26 +153,30 @@
 #### Response
 - **Success: 200**
     ```json
-    [
-        {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
-    ]
+    {
+        "movies": [ {
+            "_id": "",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+                "Action",
+                "Crime",
+                "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [],
+            "__v": 0,
+            } ],
+        "id": "667024ca0757a951dc5d7464"
+    }
     ```
 - **Failure: 404**
     ```json
@@ -285,26 +263,30 @@
 #### Response
 - **Success: 200**
     ```json
-    [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "6670253f0757a951dc5d746a",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+                "Action",
+                "Crime",
+                "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [
+                "667024ca0757a951dc5d7464"
+            ],
+            "__v": 0,
+            "bookmarked": false
         }
-    ]
     ```
 - **Failure: 404**
     ```json
@@ -329,23 +311,29 @@
     ```json
     [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "6670253f0757a951dc5d746a",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+            "Action",
+            "Crime",
+            "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [
+            "667024ca0757a951dc5d7464"
+            ],
+            "__v": 0,
+            "bookmarked": false
         },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
     ]
     ```
 - **Failure: 404**
@@ -372,26 +360,7 @@
 #### Response
 - **Success: 200**
     ```json
-    [
-        {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
-    ]
+    { "message" : "Removed from bookmark successfully", "id" : "" }
     ```
 - **Failure: 404**
     ```json
@@ -416,26 +385,30 @@
 #### Response
 - **Success: 200**
     ```json
-    [
-        {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
-    ]
+    {
+        "series": [ {
+            "_id": "",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+                "Action",
+                "Crime",
+                "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [],
+            "__v": 0,
+            } ],
+        "id": "667024ca0757a951dc5d7464"
+    }
     ```
 - **Failure: 404**
     ```json
@@ -521,26 +494,30 @@
 #### Response
 - **Success: 200**
     ```json
-    [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "6670253f0757a951dc5d746a",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+                "Action",
+                "Crime",
+                "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [
+                "667024ca0757a951dc5d7464"
+            ],
+            "__v": 0,
+            "bookmarked": false
         }
-    ]
     ```
 - **Failure: 404**
     ```json
@@ -567,23 +544,29 @@
     ```json
     [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "6670253f0757a951dc5d746a",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+            "Action",
+            "Crime",
+            "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [
+            "667024ca0757a951dc5d7464"
+            ],
+            "__v": 0,
+            "bookmarked": false
         },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
     ]
     ```
 - **Failure: 404**
@@ -611,26 +594,7 @@
 #### Response
 - **Success: 200**
     ```json
-    [
-        {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        }
-    ]
+        { "message" : "Removed from bookmark successfully", "id" : "" }
     ```
 - **Failure: 404**
     ```json
@@ -655,26 +619,30 @@
 #### Response
 - **Success: 200**
     ```json
-    [
         {
-            "_id": "60d9c6b8f8aabd0015e4e255",
-            "title": "Inception",
-            "director": "Christopher Nolan",
-            "release_date": "2010-07-16",
-            "genre": "Science Fiction",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
-        },
-        {
-            "_id": "60d9c6b8f8aabd0015e4e256",
-            "title": "The Matrix",
-            "director": "Lana Wachowski, Lilly Wachowski",
-            "release_date": "1999-03-31",
-            "genre": "Action",
-            "created_at": "2023-06-12T12:00:00Z",
-            "updated_at": "2023-06-12T12:00:00Z"
+            "_id": "6670253f0757a951dc5d746a",
+            "big_image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            "genre": [
+                "Action",
+                "Crime",
+                "Drama"
+            ],
+            "id": "top3",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+            "imdb_link": "https://www.imdb.com/title/tt0468569",
+            "imdbid": "tt0468569",
+            "rank": 3,
+            "rating": 9,
+            "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX67_CR0,0,67,98_AL_.jpg",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "bookmarks": [
+                "667024ca0757a951dc5d7464"
+            ],
+            "__v": 0,
+            "bookmarked": false
         }
-    ]
     ```
 - **Failure: 400**
     ```json

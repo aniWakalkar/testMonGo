@@ -73,7 +73,7 @@ router.get('/get/movie', verifyToken, async (req, res) => {
         if (!search_query) {
             return res.status(400).send({ message: 'Please provide a movie name' });
         }
-        const savedMovie = await Movie.find({ name: new RegExp(search_query, 'i') }).limit(14);
+        const savedMovie = await Movie.find({ title: new RegExp(search_query, 'i') }).limit(14);
 
         if (savedMovie.length === 0){
             return res.status(404).send({ message: 'Movie not found' });
@@ -151,7 +151,7 @@ router.delete('/bookmark/delete/movie/:id', verifyToken, async (req, res) => {
             return res.status(404).json({ message: 'Movie not found' });
         }
 
-        res.status(200).json(updatedMovie);
+        res.status(200).json({"message" : "Removed from bookmark successfully", "id" : id});
     } catch (error) {
         console.error('Error deleting bookmark:', error);
         res.status(500).json({ error: 'Internal Server Error' });
