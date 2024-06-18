@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const Tv_series = require('../models/Tv_seriesSchema');
+const User = require('../models/UsersSchema')
 const Bookmarked_TVSeries = require('../models/BookMarkedSeries');
 const verifyToken = require('../middleware/Verify_token');
 require('dotenv').config();
@@ -54,12 +55,13 @@ router.post('/admin/set/tvseries', verifyToken, async (req, res) => {
 router.get('/get/all/tvseries', verifyToken, async (req, res) => {
     try {
         const savedTv_series = await Tv_series.find();
+        const userId = req.userId;
   
         if (!savedTv_series) {
-          return res.status(404).send({ message: 'Tv_series not found' });
+          return res.status(404).send({ message: 'tvSeries not found' });
         }
   
-        res.status(200).json(savedTv_series);
+        res.status(200).json({"series" : savedTv_series, "id" : userId});
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -88,33 +90,43 @@ router.get('/get/tvseries', verifyToken, async (req, res) => {
 router.post('/bookmark/set/tvseries', verifyToken, async (req, res) => {
     try {
         const { id } = req.body;
-        const updatedSeries = await Tv_series.findOneAndUpdate(
-            { id: id },
-            { $set: { bookmarked: true } },
-            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        const userId = req.userId; // Use req.userId instead of req.user.id
+
+        if (!userId) {
+            return res.status(401).json({ error: 'User ID not found in token' });
+        }
+
+        // Update User document to add the bookmark
+        await User.findByIdAndUpdate(userId, { $addToSet: { bookmarks: id } });
+
+        // Update TV Series document to add the user's bookmark
+        const updatedSeries = await Tv_series.findByIdAndUpdate(
+            id,
+            { $addToSet: { bookmarks: userId } },
+            { new: true }
         );
 
         if (!updatedSeries) {
-            return res.status(404).json({ message: 'Movie not found' });
+            return res.status(404).json({ message: 'TV series not found' });
         }
 
         res.status(200).json(updatedSeries);
     } catch (error) {
-        console.error('Error updating movie:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error bookmarking TV series:', error);
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 });
 
 router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
     try {
-        const BookMarkedTVseries = await Tv_series.find({ bookmarked: true });
-        if (!BookMarkedTVseries) {
-            return res.status(404).send({ message: 'Series not found' });
-          }
-  
-        res.status(200).json(BookMarkedTVseries);
+        const userId = req.userId; // Assuming verifyToken middleware sets req.userId
+
+        // Find TV series that have been bookmarked by the user
+        const bookmarkedTVSeries = await Tv_series.find({ bookmarks: userId });
+
+        res.status(200).json(bookmarkedTVSeries);
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching bookmarked TV series:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
@@ -122,19 +134,25 @@ router.get('/bookmark/get/tvseries', verifyToken, async (req, res) => {
 router.delete('/bookmark/delete/tvseries/:id', verifyToken, async (req, res) => {
     try {
         const { id } = req.params;
-        const updatedSeries = await Tv_series.findOneAndUpdate(
-            { id: id },
-            { $set: { bookmarked: false } },
-            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        const userId = req.userId; // Assuming verifyToken middleware sets req.userId
+
+        // Update User document to remove the bookmark
+        await User.findByIdAndUpdate(userId, { $pull: { bookmarks: id } });
+
+        // Update TV Series document to remove the user's bookmark
+        const updatedSeries = await Tv_series.findByIdAndUpdate(
+            id,
+            { $pull: { bookmarks: userId } },
+            { new: true }
         );
 
         if (!updatedSeries) {
-            return res.status(404).json({ message: 'Movie not found' });
+            return res.status(404).json({ message: 'TV series not found' });
         }
 
         res.status(200).json(updatedSeries);
     } catch (error) {
-        console.error('Error updating movie:', error);
+        console.error('Error deleting bookmark for TV series:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });

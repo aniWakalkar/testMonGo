@@ -9,7 +9,7 @@ require('dotenv').config();
 router.get('/users', verifyToken, async (req, res) => {
     try {
         const users = await User.find();
-        res.json(users);
+        res.status(200).json(users);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -23,10 +23,10 @@ router.get('/userid', authenticateUser, async (req, res) => {
       if (user) {
         res.status(200).json(user);
       } else {
-        res.status(401).json({ error: 'User not found' });
+        res.status(401).json({ message: 'User not found' });
       }
     } catch (err) {
-      res.status(500).json({ error: 'Internal Server Error' });
+      res.status(500).json({ message: 'Internal Server Error' });
     }
 });
 

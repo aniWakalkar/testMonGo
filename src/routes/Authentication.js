@@ -33,7 +33,7 @@ router.post('/signup', async (req, res) => {
         res.status(201).send({ message: 'User created successfully', userId: newUser._id });
     } catch (err) {
         if(err.message.includes('duplicate')){
-            return res.status(400).send({ message: "User already exist" });
+            return res.status(409).send({ message: "User already exist" });
         }
         res.status(400).send({ message: err.message });
     }

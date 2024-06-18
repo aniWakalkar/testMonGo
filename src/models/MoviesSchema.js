@@ -15,7 +15,8 @@ const movie_schema = new mongoose.Schema({
   thumbnail: { type: String, required: true },
   title: { type: String, required: true },
   year: { type: String, required: true },
-  bookmarked: { type: Boolean , default:false}
+  // bookmarked: { type: Boolean , default:false},
+  bookmarks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
 // Create and export the model

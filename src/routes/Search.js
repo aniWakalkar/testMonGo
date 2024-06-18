@@ -9,7 +9,7 @@ router.get('/search', verifyToken, async (req, res) => {
     try {
         const {search_query} = req.body;
         if (!search_query) {
-            return res.status(400).send({ message: 'Please provide a movie name' });
+            return res.status(400).send({ message: 'Please provide a search value' });
         }
         
         const options = {

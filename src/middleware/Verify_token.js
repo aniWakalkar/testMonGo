@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const verifyToken = (req, res, next) => {
     const token = req.headers['x-access-token'];
+    
     if (!token) {
         return res.status(403).send({ message: 'No token provided!' });
     }
@@ -12,10 +13,9 @@ const verifyToken = (req, res, next) => {
         if (err) {
             return res.status(500).send({ message: 'Failed to authenticate token.' });
         }
-        req.userId = decoded.id;
+        req.userId = decoded.id; // Assuming your JWT payload includes 'id'
         next();
     });
 };
-
 
 module.exports = verifyToken

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const Movie = require('../models/MoviesSchema');
+const User = require('../models/UsersSchema')
 const Bookmarked_Movie = require('../models/BookMarkedMovies');
 const verifyToken = require('../middleware/Verify_token');
 require('dotenv').config();
@@ -53,12 +54,12 @@ router.post('/admin/set/movies', verifyToken, async (req, res) => {
 router.get('/get/all/movies', verifyToken, async (req, res) => {
     try {
         const savedMovies = await Movie.find();
-  
+        const userId = req.userId;
         if (!savedMovies) {
           return res.status(404).send({ message: 'Movies not found' });
         }
   
-        res.status(200).json(savedMovies);
+        res.status(200).json({"movies" : savedMovies, "id" : userId});
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -84,13 +85,26 @@ router.get('/get/movie', verifyToken, async (req, res) => {
     }
 });
 
+
+
+
 router.post('/bookmark/set/movie', verifyToken, async (req, res) => {
     try {
         const { id } = req.body;
-        const updatedMovie = await Movie.findOneAndUpdate(
-            { id: id },
-            { $set: { bookmarked: true } },
-            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        const userId = req.userId; // Use req.userId instead of req.user.id
+
+        if (!userId) {
+            return res.status(401).json({ error: 'User ID not found in token' });
+        }
+
+        // Update User document to add the bookmark
+        await User.findByIdAndUpdate(userId, { $addToSet: { bookmarks: id } });
+
+        // Update Movie document to add the user's bookmark
+        const updatedMovie = await Movie.findByIdAndUpdate(
+            id,
+            { $addToSet: { bookmarks: userId } },
+            { new: true }
         );
 
         if (!updatedMovie) {
@@ -99,21 +113,21 @@ router.post('/bookmark/set/movie', verifyToken, async (req, res) => {
 
         res.status(200).json(updatedMovie);
     } catch (error) {
-        console.error('Error updating movie:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error bookmarking movie:', error);
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 });
 
 router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
     try {
-        const bookmarked_Movies = await Movie.find({ bookmarked: true });
-        if (!bookmarked_Movies) {
-          return res.status(404).send({ message: 'Movies not found' });
-        }
-  
-        res.status(200).json(bookmarked_Movies);
+        const userId = req.userId; // Assuming verifyToken middleware sets req.user
+
+        // Find movies that have been bookmarked by the user
+        const bookmarkedMovies = await Movie.find({ bookmarks: userId });
+
+        res.status(200).json(bookmarkedMovies);
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching bookmarked movies:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
@@ -121,10 +135,16 @@ router.get('/bookmark/get/movies', verifyToken, async (req, res) => {
 router.delete('/bookmark/delete/movie/:id', verifyToken, async (req, res) => {
     try {
         const { id } = req.params;
-        const updatedMovie = await Movie.findOneAndUpdate(
-            { id: id },
-            { $set: { bookmarked: false } },
-            { new: true, upsert: true } // new: true returns the updated document; upsert: true creates the document if it doesn't exist
+        const userId = req.userId; // Assuming verifyToken middleware sets req.user
+
+        // Update User document to remove the bookmark
+        await User.findByIdAndUpdate(userId, { $pull: { bookmarks: id } });
+
+        // Update Movie document to remove the user's bookmark
+        const updatedMovie = await Movie.findByIdAndUpdate(
+            id,
+            { $pull: { bookmarks: userId } },
+            { new: true }
         );
 
         if (!updatedMovie) {
@@ -133,7 +153,7 @@ router.delete('/bookmark/delete/movie/:id', verifyToken, async (req, res) => {
 
         res.status(200).json(updatedMovie);
     } catch (error) {
-        console.error('Error updating movie:', error);
+        console.error('Error deleting bookmark:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });

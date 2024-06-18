@@ -12,14 +12,6 @@ const user_schema = new mongoose.Schema({
         type: String,
         required: true,
       },
-    bookmark: {
-      Movie: {
-          type: [String],
-      },
-      TVSeries: {
-          type: [String],
-      }
-    }
 });
 
 const User = mongoose.model('User', user_schema);
