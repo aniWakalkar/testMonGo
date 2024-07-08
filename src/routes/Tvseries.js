@@ -150,7 +150,7 @@ router.delete('/bookmark/delete/tvseries/:id', verifyToken, async (req, res) => 
             return res.status(404).json({ message: 'TV series not found' });
         }
 
-        res.status(200).json(updatedSeries);
+        res.status(200).json({"message" : "Removed from bookmark successfully", "id" : id});
     } catch (error) {
         console.error('Error deleting bookmark for TV series:', error);
         res.status(500).json({ error: 'Internal Server Error' });
